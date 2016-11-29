@@ -1,0 +1,22 @@
+h1 URL Shortener Microservice
+p User stories:
+ul
+    li I can pass a URL as a parameter and I will receive a shortened URL in the
+    JSON response.
+    li When I visit that shortened URL, it will redirect me to my original link.
+
+h2 Example creation usage:
+p https://localhost:3000/new/https://google.com
+p https://localhost:3000/new/http://foo.com:80
+
+h2 Example creation output:
+p { "original_url":"http://foo.com:80", "short_url":"https://localhost:3000/8170" }
+
+h2 Usage:
+p https://localhost:3000/2871
+
+h2 Will redirect to:
+p https://www.google.com/
+
+
+
