@@ -10,10 +10,8 @@ app.get('/', function(req, res) {
   res.render('index');
 })
 
-app.get('/new/:url', function(req, res) {
-  var url = req.params.url;
-  console.log('url:');
-  console.log(url);
+app.get(/\/new\/(.+)/, function(req, res) {
+  var url = req.params[0];
   var result = urlShortenerService.shorten(url);
   res.send(result);
 })
