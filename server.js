@@ -16,6 +16,14 @@ app.get(/\/new\/(.+)/, function(req, res) {
   res.send(result);
 })
 
+app.get(/\/(.+)/, function(req, res) {
+    var shortUrl = req.params[0];
+    urlShortenerService.getLongUrl(shortUrl)
+        .then(function(result) {
+            res.redirect(result);
+        });
+})
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
